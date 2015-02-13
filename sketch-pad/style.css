@@ -1,0 +1,10 @@
+#container {
+    overflow: auto;
+    width: 800px;
+    margin: auto;
+}
+.square {
+    background-color: black;
+    float: left;
+    border: 1px solid white;
+}
