@@ -1,4 +1,4 @@
-var current_size = 16;
+var current_size = prompt('Enter a number between 1 & 128');
 $(document).ready(function () {
     load(current_size);
     hover_color();
