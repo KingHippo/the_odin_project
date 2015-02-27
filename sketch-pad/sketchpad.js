@@ -1,24 +1,73 @@
-var current_size = prompt('Enter a number between 1 & 128');
-$(document).ready(function () {
-    load(current_size);
-    hover_color();
+$(document).ready(function() {
+    //Create 8*8 grid with default color settings
+    createGrid(8);
+    defaultSketch();
 });
-
-function hover_color() {
-    $(".square").hover(function () {
+//Holds the amount of squares chosen by user
+function numberSquares() {
+    x = prompt("Squares per side ? (1-64)");
+    if (x <= 0) {
+        x = prompt("The number must be higher than 0!");
+    }
+    //Removes previous grid
+    $(".square").remove();
+    return x;
+}
+//Called when page loads to prevent blank page
+function defaultSketch() {
+    $(".square").hover(function() {
         $(this).css('background-color', 'grey');
     });
-};
+}
+//Called upon click of sketch button
+function greySketch() {
+    x = numberSquares();
+    createGrid(x);
+    defaultSketch();
+}
+//Called upon click of gradient button
+function gradSketch() {
+    x = numberSquares();
+    createGrid(x);
+    $(".square").mouseover(function() {
+        newOpacity = parseFloat($(this).css("opacity")) - 0.05;
+        $(this).css("opacity", newOpacity);
+    });
+}
+//Called upon click of trail button
+function trailSketch() {
+    x = numberSquares();
+    createGrid(x);
+    $(".square").hover(function () {
+        $(this).css('opacity', 0);
+    },
 
-function load(size) {
-    var square_size = $("#container").width() / size -2; //-2 for borders
+    function () {
+        $(this).fadeTo('fast',1);
+    });
+
+}
+//Called upon click of colors button
+function colorSketch() {
+    x = numberSquares();
+    createGrid(x);
+    $(".square").hover(function() {
+        $(this).css({
+            "background-color": '#' + Math.random().toString(16).substring(2, 8)
+        });
+    });
+}
+//Called upon document ready and passed value from onclick
+function createGrid(size) {
+    var square_size = $("#box").width() / size - 2; //-2 for borders
     //Create the size x size grid.
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
-            $("#container").append("<div class='square'></div>");
+            //Adds the squares too DOM
+            $("#box").append("<div class='square'></div>");
         }
     }
-    //Adjust the square size.
+    //Adjust the square size based on input.
     $(".square").css('width', square_size);
     $(".square").css('height', square_size);
-};
+}
