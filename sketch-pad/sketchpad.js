@@ -6,8 +6,8 @@ $(document).ready(function() {
 //Holds the amount of squares chosen by user
 function numberSquares() {
     x = prompt("Squares per side ? (1-64)");
-    if (x <= 0) {
-        x = prompt("The number must be higher than 0!");
+    if (x <= 0 || x > 64) {
+        x = prompt("The number must be < 0 and => 64!");
     }
     //Removes previous grid
     $(".square").remove();
