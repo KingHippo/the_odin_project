@@ -78,14 +78,12 @@ end
 # write tests and code for the following:
 
 describe "multiply" do
-
   it "multiplies two numbers" do
   multiply([2,2]).should == 4
   end
   it "multiplies several numbers" do
   multiply([2,2,2]).should == 8
   end
-
 end
 
 describe "power" do
