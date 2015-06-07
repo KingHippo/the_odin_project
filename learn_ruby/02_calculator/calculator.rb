@@ -15,3 +15,11 @@ def sum(num)
   end
   return total
 end
+
+def multiply(num)
+  total = 1
+  num.each do |i|
+    total *= i
+  end
+  return total
+end
