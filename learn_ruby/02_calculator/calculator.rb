@@ -23,3 +23,16 @@ def multiply(num)
   end
   return total
 end
+
+def power(x,y)
+  num = x
+  multi = y
+  count = 1
+  total = 0
+
+  while count <= y
+    total = num * x
+    count += 1
+  end
+  return total
+end
