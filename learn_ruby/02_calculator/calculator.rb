@@ -24,15 +24,30 @@ def multiply(num)
   return total
 end
 
-def power(x,y)
-  num = x
-  multi = y
-  count = 1
-  total = 0
+# Old solution I'm keeping for ref.
+# I like this use of recursion.
+# def power(x, y)
+#   if y == 0
+#     1
+#   elsif y == 1
+#     x
+#   else
+#     x * power(x, y - 1)
+#   end
+# end
 
-  while count <= y
-    total = num * x
-    count += 1
+
+def power(num,pow)
+  if pow == 0
+    num
+  else
+    total = 1
+    count = 0
+    while count < pow
+      total *= num
+      count += 1
+    end
+    return total
   end
-  return total
 end
+
