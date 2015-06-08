@@ -51,3 +51,15 @@ def power(num,pow)
   end
 end
 
+def factorial(num)
+  fac = num
+  if num == 0
+    return 1
+    else
+    while fac != 0
+      fac *= fac - 1
+      fac -= 1
+    end
+    return fac
+  end
+end
