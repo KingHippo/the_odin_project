@@ -19,6 +19,6 @@ def first_word(str)
   word[0]
 end
 
-def titleize
-  
+def titleize(str)
+  str.capitalize
 end
