@@ -11,6 +11,6 @@ def repeat(str, num=2)
 end
 
 def start_of_word(str, num)
-    word = str.split{%r{\s*}}
-    return word[num]
+    str[num]
 end
+
