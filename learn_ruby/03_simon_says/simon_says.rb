@@ -14,6 +14,11 @@ def start_of_word(str, num)
   str[0..num-1]
 end
 
-def first_word
+def first_word(str)
+  word = str.split(' ')
+  word[0]
+end
+
+def titleize
   
 end
