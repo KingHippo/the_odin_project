@@ -11,5 +11,5 @@ def repeat(str, num=2)
 end
 
 def start_of_word(str, num)
-    str[num-1]
+    str[0..num-1]
 end
