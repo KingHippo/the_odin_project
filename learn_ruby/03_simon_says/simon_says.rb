@@ -21,5 +21,6 @@ end
 
 def titleize(str)
   words = str.split(' ')
-  words.each {|word| word.capitalize}
+  words.each {|word| word.capitalize!}
+  words.join(' ')
 end
