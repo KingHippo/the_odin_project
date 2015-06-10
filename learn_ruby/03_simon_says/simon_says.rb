@@ -20,5 +20,6 @@ def first_word(str)
 end
 
 def titleize(str)
-  str.capitalize
+  words = str.split(' ')
+  words.each {|word| word.capitalize}
 end
