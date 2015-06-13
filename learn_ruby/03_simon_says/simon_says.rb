@@ -20,14 +20,11 @@ def first_word(str)
 end
 
 def titleize(str)
-  words = str.split(' ')
-
-  words.each do |word|
-    if word.include?("and")
-      word.downcase!
-    else
-      word.capitalize!
-    end
-  end
-  words.join(' ')
+  # add words you don't want capitalized
+  lil = ["and", "the", "over"]
+  # seperate each word by a space and capitalize each word unless word is in lil array
+  words = str.split(' ').each {|word| word.capitalize! unless(lil.include?(word))}
+  # always capitalize the first word
+  words[0].capitalize!
+  return words.join(' ')
 end
