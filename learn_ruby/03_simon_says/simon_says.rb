@@ -23,9 +23,10 @@ def titleize(str)
   words = str.split(' ')
 
   words.each do |word|
-    word.capitalize!
     if word.include?("and")
       word.downcase!
+    else
+      word.capitalize!
     end
   end
   words.join(' ')
