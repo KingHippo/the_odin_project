@@ -3,11 +3,11 @@ class Book
     words = str.split(" ")
     lil = ["a", "an", "and", "in", "the", "of"]
 
-    words = [words[0].capitalize] + words[1..-1].map do |word|
-      if lil.include? word
-        word
+    words.map! do |word|
+      unless lil.include? word || word == "the"
+        word.capitalize!
       else
-        word.capitalize
+        word
       end
     end
       @str = words.join(" ")
