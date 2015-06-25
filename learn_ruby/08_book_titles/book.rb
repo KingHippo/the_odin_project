@@ -1,10 +1,11 @@
 class Book
   def title=(str)
     words = str.split(" ")
-
+    lil = ["a", "an", "and", "in", "the", "of"]
+    
     words.map! do |word|
 
-      lil = ["a", "an", "and", "in", "the", "of"]
+      
 
       unless lil.include? word
         word.capitalize
