@@ -11,7 +11,6 @@ class Timer
 
   def time_format(seconds)
     time = seconds
-    format = [0,":",0,":",0]
 
     if time > 60
       hour  = time / 60
@@ -19,6 +18,9 @@ class Timer
     else
       second = time
     end
+
+    time_format = hour.to_s + ": " + minute.to_s + ": " + second.to_s
+    return time_format
   end
 
 end
