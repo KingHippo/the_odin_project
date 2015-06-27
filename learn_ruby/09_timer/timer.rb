@@ -14,8 +14,10 @@ class Timer
     format = [0,":",0,":",0]
 
     if time > 60
-      hour = time / 60
+      hour  = time / 60
       minute = time % 60
+    else
+      second = time
     end
   end
 
