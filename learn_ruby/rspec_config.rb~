@@ -3,3 +3,4 @@ RSpec.configure do |c|
   c.color = true
 end
 
+config.expect_with(:rspec) { |c| c.syntax = :should }

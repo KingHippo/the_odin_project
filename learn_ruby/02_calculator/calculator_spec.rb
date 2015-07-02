@@ -77,18 +77,28 @@ end
 # once the above tests pass,
 # write tests and code for the following:
 
+
 describe "multiply" do
   it "multiplies two numbers" do
   multiply([2,2]).should == 4
   end
+
   it "multiplies several numbers" do
   multiply([2,2,2]).should == 8
   end
 end
 
 describe "power" do
-  it "raises one number to the power of another number" do
+  it "raises 3 to the power of 2" do
   power(3,2).should == 9
+  end
+
+  it "raises 4 to the power of 4" do
+  power(4,4).should == 256
+  end
+
+  it "raises 1 to the power of 0" do
+  power(1,0).should == 1
   end
 end
 
@@ -97,15 +107,19 @@ describe "factorial" do
   it "computes the factorial of 0" do
     factorial(0).should == 1
   end
+
   it "computes the factorial of 1" do
     factorial(1).should == 1
   end
+
   it "computes the factorial of 2" do
     factorial(2).should == 2
   end
+
   it "computes the factorial of 5" do
     factorial(5).should == 120
   end
+  
   it "computes the factorial of 10" do
     factorial(10).should == 3628800
   end
