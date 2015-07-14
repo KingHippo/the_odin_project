@@ -11,6 +11,7 @@
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 </p>
+
 <h3>Comments (<%= @article.comments.size %>)</h3>
 
 <%= render partial: 'comments/form' %>
