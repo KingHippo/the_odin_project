@@ -1,6 +1,5 @@
 def casear_cipher(string, shift)
-    letter = string.split('')
-    puts letter
+    string.each_byte {|val| puts val.ord}
 end
 
-casear_cipher("bob", 5)
+casear_cipher("hello", 5)
